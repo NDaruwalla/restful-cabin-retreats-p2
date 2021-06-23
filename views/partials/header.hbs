@@ -1,0 +1,23 @@
+<header class="site-header">
+    <a class="logo" href="/">Restful Cabin Retreats</a>
+    <nav class="main-nav">
+        <i class="main-nav-toggle bi bi-list js-main-nav-toggle"></i>
+        <ul class="main-nav-list js-main-nav-list">
+            <li class="main-nav-item">
+                <a href="/">Cabins</a>
+            </li>
+            {{#if loggedIn}}
+                <li class="main-nav-item">
+                    <a href="/dashboard">Dashboard</a>
+                </li>
+                <li class="main-nav-item">
+                    <a class="js-logout-link" href="/">Logout</a>
+                </li>
+            {{else}}
+                <li class="main-nav-item">
+                    <a href="/login">Login</a>
+                </li>
+            {{/if}}
+        </ul>
+    </nav>
+</header>

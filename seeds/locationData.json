@@ -1,0 +1,70 @@
+[
+    {
+        "country": "Kenya",
+        "region": "Africa"
+    },
+    {
+        "country": "Madagascar",
+        "region": "Africa"
+    },
+    {
+        "country": "Morocco",
+        "region": "Africa"
+    },
+    {
+        "country": "Mexico",
+        "region": "Americas"
+    },
+    {
+        "country": "Canada",
+        "region": "Americas"
+    },
+    {
+        "country": "United States",
+        "region": "Americas"
+    },
+    {
+        "country": "India",
+        "region": "Asia"
+    },
+    {
+        "country": "Indonesia",
+        "region": "Asia"
+    },
+    {
+        "country": "Malaysia",
+        "region": "Asia"
+    },
+    {
+        "country": "Thailand",
+        "region": "Asia"
+    },
+    {
+        "country": "Finland",
+        "region": "Europe"
+    },
+    {
+        "country": "Spain",
+        "region": "Europe"
+    },
+    {
+        "country": "Iceland",
+        "region": "Europe"
+    },
+    {
+        "country": "Norway",
+        "region": "Europe"
+    },
+    {
+        "country": "Fiji",
+        "region": "Oceania"
+    },
+    {
+        "country": "New Zealand",
+        "region": "Oceania"
+    },
+    {
+        "country": "French Polynesia",
+        "region": "Oceania"
+    }
+]

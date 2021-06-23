@@ -1,0 +1,58 @@
+{{> header}}
+
+{{#> main-content}}
+    {{#*inline "content"}}
+        <div class="narrow-content-wrapper login-page-content">
+            <section class="js-login-block">
+                <h2 class="page-title">Login</h2>
+                <form class="js-login-form">
+                    <div class="form-group">
+                        <label class="form-label" for="login-email">Email</label>
+                        <input class="form-input" type="email" id="login-email" name="email" required />
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="login-password">Password</label>
+                        <input class="form-input" type="password" id="login-password" name="password" required />
+                    </div>
+                    <div class="form-btn-group">
+                        <button class="btn" type="submit">Sign In</button>
+                        <p class="form-message">New? <button class="btn-link js-login-block-toggle" type="button">Create Account</button></p>
+                    </div>
+                </form>
+            </section>
+            <section class="js-signup-block hidden">
+                <h2 class="page-title">Registration</h2>
+                <form class="js-signup-form">
+                    <div class="form-group">
+                        <label class="form-label" for="signup-first-name">First name</label>
+                        <input class="form-input" type="text" id="signup-first-name" name="first-name" />
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="signup-last-name">Last name</label>
+                        <input class="form-input" type="text" id="signup-last-name" name="last-name" />
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="signup-email">Email</label>
+                        <input class="form-input" type="email" id="signup-email" name="email" required />
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="signup-password">Password</label>
+                        <input class="form-input" type="password" id="signup-password" name="password" required />
+                    </div>
+                    <div class="form-btn-group">
+                        <button class="btn" type="submit">Sign Up</button>
+                        <p class="form-message">Have an account? <button class="btn-link js-login-block-toggle" type="button">Login</button></p>
+                    </div>
+                </form>
+            </section>
+        </div>
+    {{/inline}}
+{{/main-content}}
+
+{{> footer}}
+
+{{#> scripts-block}}
+    {{#*inline "script-files"}}
+        <script src="/js/login.js"></script>
+    {{/inline}}
+{{/scripts-block}}

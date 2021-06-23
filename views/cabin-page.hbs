@@ -1,0 +1,49 @@
+{{> header}}
+
+{{#> main-content}}
+    {{#*inline "content"}}
+        <div class="content-wrapper cabin-page">
+            <div class="cabin-gallery js-cabin-gallery">
+                {{#each cabin.images as |image|}}
+                    <div class="cabin-image" style="background-image: url({{image.src}})"></div>
+                {{/each}}
+                <button class="prev-slide js-prev-slide"><i class="bi bi-chevron-left"></i></button>
+                <button class="next-slide js-next-slide"><i class="bi bi-chevron-right"></i></button>
+            </div>
+            <div class="cabin-datails">
+                <h2 class="page-title">{{cabin.title}}</h2>
+                <p class="cabin-location">{{cabin.location.country}}, {{cabin.location.region}}</p>
+                <p class="cabin-info">
+                    <span class="info-item"><i class="bi bi-people-fill"></i> {{cabin.occupancy}}</span>
+                    <span class="info-item"><i class="bi bi-currency-dollar"></i>{{cabin.price}}</span>
+                </p>
+                <p class="cabin-description">{{cabin.description}}</p>
+                {{#if loggedIn}}
+                    <button class="btn js-datepicker-toggle">Check Availability</button>
+                {{else}}
+                    <p class="alert-message">To be able to reserve this cabin, you should <a href="/login">login</a> to the website.</p>
+                {{/if}}
+            </div>
+            {{#if loggedIn}}
+                <div class="reservation-block js-reservation-block">
+                    <input class="js-datepicker hidden" type="hidden" readonly data-reservations="{{reservations}}" data-cabin-id="{{cabin.id}}">
+                    <div class="reservation-btns">
+                        <button class="btn js-reserve-dates" disabled>Reserve</button>
+                        <button class="btn js-clear-dates" disabled>Clear</button>
+                    </div>
+                </div>
+            {{/if}}
+        </div>
+    {{/inline}}
+{{/main-content}}
+
+{{> footer}}
+
+{{#> scripts-block}}
+    {{#*inline "script-files"}}
+        <script src="/js/cabin.js"></script>
+        {{#if loggedIn}}
+            <script src="/js/reservation.js"></script>
+        {{/if}}
+    {{/inline}}
+{{/scripts-block}}

@@ -1,0 +1,36 @@
+{{> header}}
+
+{{#> main-content}}
+    {{#*inline "content"}}
+        <div class="hero-banner">
+            <img src="/images/homepage-hero-banner.jpg" alt="Banner">
+        </div>
+        <div class="content-wrapper">
+            {{#if cabins}}
+                <ul class="cabins-list">
+                    {{#each cabins as |cabin|}}
+                        <li class="cabin-item">
+                            <div class="cabin-image" style="background-image: url({{cabin.images.[0].src}});"></div>
+                            <h2 class="cabin-title">{{cabin.title}}</h2>
+                            <p class="cabin-location">{{cabin.location.country}}, {{cabin.location.region}}</p>
+                            <p class="cabin-info">
+                                <span class="info-item"><i class="bi bi-people-fill"></i> {{cabin.occupancy}}</span>
+                                <span class="info-item"><i class="bi bi-currency-dollar"></i>{{cabin.price}}</span>
+                            </p>
+                            <p class="cabin-description">{{truncText cabin.description 80}}</p>
+                            <a href="/cabins/{{cabin.id}}" class="btn">View Details</a>
+                        </li>
+                    {{/each}}
+                </ul>
+            {{else}}
+                <p class="alert-message">No cabins found!</p>
+            {{/if}}
+        </div>
+    {{/inline}}
+{{/main-content}}
+
+{{> footer}}
+
+{{#> scripts-block}}
+    {{#*inline "script-files"}}{{/inline}}
+{{/scripts-block}}

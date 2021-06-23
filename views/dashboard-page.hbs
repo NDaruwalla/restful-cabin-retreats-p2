@@ -1,0 +1,49 @@
+{{> header}}
+
+{{#> main-content}}
+    {{#*inline "content"}}
+        <div class="content-wrapper">
+            <h2 class="page-title">Dashboard</h2>
+            <h3 class="block-title">Your reservations:</h3>
+
+            {{#if reservations}}
+                <ul class="reservations-list">
+                    {{#each reservations as |reservation|}}
+                        <li class="reservation-item">
+                            <a class="cabin-image" href="/cabins/{{reservation.cabin.id}}" style="background-image: url({{reservation.cabin.images.[0].src}});"></a>
+                            <div class="details-wrapper">
+                                <div class="cabin-details">
+                                    <h4 class="cabin-title">{{reservation.cabin.title}}</h4>
+                                    <p class="cabin-info">
+                                        <span class="info-item"><i class="bi bi-people-fill"></i> {{reservation.cabin.occupancy}}</span>
+                                        <span class="info-item"><i class="bi bi-currency-dollar"></i>{{reservation.cabin.price}}</span>
+                                    </p>
+                                    <p class="cabin-description">{{truncText reservation.cabin.description 100}}</p>
+                                </div>
+                                <div class="reservation-details">
+                                    <p>You reserve cabin</p>
+                                    <p class="start-date">from <strong>{{reservation.reservation_start}}</strong></p>
+                                    <p class="end-date">to <strong>{{reservation.reservation_end}}</strong></p>
+                                </div>
+                                <div class="actions">
+                                    <a class="btn small-btn" href="/cabins/{{reservation.cabin.id}}">View Cabin</a>
+                                    <button class="btn small-btn js-cancel-reservation" data-reservation-id="{{reservation.id}}">Cancel Reservation</button>
+                                </div>
+                            </div>
+                        </li>
+                    {{/each}}
+                </ul>
+            {{else}}
+                <p class="alert-message">You don't have reservation yet!</p>
+            {{/if}}
+        </div>
+    {{/inline}}
+{{/main-content}}
+
+{{> footer}}
+
+{{#> scripts-block}}
+    {{#*inline "script-files"}}
+        <script src="/js/dashboard.js"></script>
+    {{/inline}}
+{{/scripts-block}}

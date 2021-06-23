@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS restful_db;
+CREATE DATABASE restful_db;
